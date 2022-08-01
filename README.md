@@ -10,6 +10,7 @@ I will be soon uploading a video on youtube
 
 # Install
 
-...
-this is a code
-...
+```
+This is code
+
+```
