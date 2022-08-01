@@ -68,6 +68,49 @@ The list of categories (with number of books) were in a "div" tag with the class
 
 ![List of Categories Screenshot](/categories_list.png)
 
-My main targetwas to fetch not only category names, but also its links so that they can be later used to fetch the data in each category.
+My main target was to fetch not only category names, but also its links so that they can be later used to fetch the data in each category.
+
 I created an empty list by the name of "categories" and an empty dictionary by the name of "categories_with_link."
+
 Main purpose is the "categories" list should contain the name of categories only. The dictionary would contain the category names and their associated links.
+
+
+```
+
+div_tag = homepage_soup.find(name="div", class_="categories_listings").find(name="ul").find_all(name="a")
+categories = []
+categories_with_link = {}
+
+```
+
+For loop is initiated in the div tag. The use of "i,getText()" is to extract the name of categories. Then they are appended in the "categories" list. And using 'f"{READINGS_URL}{i['href']}"', the link is extracted of each category. After that the dictionary is appended with the concerned category and its associated link.
+
+```
+
+for i in div_tag:
+
+    category = i.getText()
+    categories.append(category)
+
+    links = f"{READINGS_URL}{i['href']}"
+    categories_with_link[category] = links
+
+```
+
+The result would look like this
+
+```
+
+For loop is initiated in the div tag. The use of "i,getText()" is to extract the name of categories. Then they are appended in the "categories" list. And using 'f"{READINGS_URL}{i['href']}"', the link is extracted of each category. After that the dictionary is appended with the concerned category and its associated link.
+
+```
+
+{'Adult Colouring Books': 'https://www.readings.com.pk/pages/category.aspx?Category=73&Level=Level1&BookType=N', 
+'Adult Graphic Novels': 'https://www.readings.com.pk/pages/category.aspx?Category=27&Level=Level1&BookType=N', 
+'Anthropology': 'https://www.readings.com.pk/pages/category.aspx?Category=17&Level=Level1&BookType=N', 
+'Archaeology': 'https://www.readings.com.pk/pages/category.aspx?Category=19&Level=Level1&BookType=N', 
+'Architecture': 'https://www.readings.com.pk/pages/category.aspx?Category=60&Level=Level1&BookType=N', 
+'Art': 'https://www.readings.com.pk/pages/category.aspx?Category=56&Level=Level1&BookType=N', 
+'Automobiles': 'https://www.readings.com.pk/pages/category.aspx?Category=4&Level=Level1&BookType=N', ...}
+
+```
