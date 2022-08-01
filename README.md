@@ -4,3 +4,12 @@ In my pilot project, I have used webscraping methods in Python to scrape data of
 
 ![Final Screenshot](/csv_screenshot.png)
 
+# Learn
+
+I will be soon uploading a video on youtube
+
+# Install
+
+...
+this is a code
+...
