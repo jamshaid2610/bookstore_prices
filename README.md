@@ -99,9 +99,6 @@ for i in div_tag:
 
 The result would look like this
 
-```
-
-For loop is initiated in the div tag. The use of "i,getText()" is to extract the name of categories. Then they are appended in the "categories" list. And using 'f"{READINGS_URL}{i['href']}"', the link is extracted of each category. After that the dictionary is appended with the concerned category and its associated link.
 
 ```
 
