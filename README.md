@@ -97,7 +97,7 @@ for i in div_tag:
 
 ```
 
-The result would look like this
+The categories_with_link dictionary would look like this:
 
 
 ```
@@ -109,5 +109,13 @@ The result would look like this
 'Architecture': 'https://www.readings.com.pk/pages/category.aspx?Category=60&Level=Level1&BookType=N', 
 'Art': 'https://www.readings.com.pk/pages/category.aspx?Category=56&Level=Level1&BookType=N', 
 'Automobiles': 'https://www.readings.com.pk/pages/category.aspx?Category=4&Level=Level1&BookType=N', ...}
+
+```
+
+The categories list would look like this:
+
+```
+
+['Adult Colouring Books', 'Adult Graphic Novels', 'Anthropology', 'Archaeology', 'Architecture', 'Art', 'Automobiles', 'Aviation', 'Biography & Autobiography', 'Body, Mind & Spirit', 'Business', 'Coffee Table', 'Computer', 'Cooking', 'Crafts', 'Education', 'Fashion', 'Fiction', 'Games & Puzzles', 'Gardening & Landscaping', 'Gift Books', 'Guns', 'Health', 'Health & Fitness', 'History', 'Home & Interior', 'Humor', 'Jewelry', 'Journals & Diaries', 'Language', 'Law', 'Linguistics', 'Literary Criticism', 'Literature', 'Mass Communication', 'Medical', 'Middle Eastern Studies', 'Mythology & Folklore', 'Nature', 'New Age/Occult', 'Pakistan Studies', 'Performing Arts', 'Pets', 'Philosophy', 'Photography', 'Politics', 'Psychology', 'Reference', 'Religion', 'Research', 'Science', 'Selfhelp', 'Sociology', 'South Asian Studies', 'Sports', 'Study Guides', 'Travel Guides', 'Travel Writings', 'True Crime', 'Women Studies', 'Writing Skills']
 
 ```
