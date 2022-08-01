@@ -9,8 +9,14 @@ In my pilot project, I have used webscraping methods in Python to scrape data of
 I will be soon uploading a video on youtube
 
 # Install
+For this webscrapiing project, I have used three packages. I have used "bs4" to use the BeautifulSoup class which basically is the main tool to scrap data from the website.
+Then, the next package that I will be using is "requests". This will allow me to fetch data is html format for the BeautifulSoup to use.
+Last but not the least, I will be using "pandas" to collate the fetched datas to a csv folder.
 
 ```
-This is code
+
+from bs4 import BeautifulSoup
+import requests
+import pandas as pd
 
 ```
