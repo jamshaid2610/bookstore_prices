@@ -184,7 +184,46 @@ for a in avail_tag:
     books_dictionary["Price"].append(actual_price)
 ```
 
+The final dictionary would look something like this:
+
+```
+{'Title': ['Mythic World',
+           "Mythographic Color And Discover: Wild Winter: An Artist'S Coloring Book Of Snowy Animals And Hidden Objects",
+           '30 Days Of Creativity: Draw, Colour And Discover Your Creative Self',
+           'Worlds Of Wonder: A Colouring Book For The Curious', "Fragile World: Color Nature'S Wonders",
+           'Johanna Basford Land, Sea, And Sky: Three Colorable Notebooks',
+           'How To Draw Inky Wonderlands: Create And Colour Your Own Magical Adventure',
+           'The Little Book Of Colour:How To Use The Psychology Of Colour To Transform Your Life',
+           'Geomorphia:An Extreme Coloring And Search Challenge',
+           'World Of Flowers: A Colouring Book And Floral Adventure'],
+ 'Category': ['Adult Colouring Books', 'Adult Colouring Books', 'Adult Colouring Books', 'Adult Colouring Books',
+              'Adult Colouring Books', 'Adult Colouring Books', 'Adult Colouring Books', 'Adult Colouring Books',
+              'Adult Colouring Books', 'Adult Colouring Books'],
+ 'Price': ['Rs.1841', 'Rs.1795', 'Rs.1615', 'Rs.2065', 'Rs.1435', 'Rs.1165', 'Rs.1525', 'Rs.1211', 'Rs.1075',
+           'Rs.2065'], 'Availability': ['Available', 'Out of StockAvailability in 6-8 weeks on receipt of order',
+                                        'Out of StockAvailability in 6-8 weeks on receipt of order',
+                                        'Out of StockAvailability in 6-8 weeks on receipt of order',
+                                        'Out of StockAvailability in 6-8 weeks on receipt of order',
+                                        'Out of StockAvailability in 6-8 weeks on receipt of order',
+                                        'Out of StockAvailability in 6-8 weeks on receipt of order',
+                                        'Out of StockAvailability in 6-8 weeks on receipt of order',
+                                        'Out of StockAvailability in 6-8 weeks on receipt of order',
+                                        'Out of StockAvailability in 6-8 weeks on receipt of order'],
+ 'Links': ['https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1371242',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1367607',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1358155',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1294419',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1294379',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1364490',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1345015',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1195144',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1158619',
+           'https://www.readings.com.pk/pages/BookDetails.aspx?BookID=1171803']}
+           
+ ```
+
 After the main for loop has been executed, we will have a complete dictionary of all the categories and its first few newest arrivals. Then using pandas module, we will convert the dictionary into a dataframe and then the dataframe will be converted into a CSV file known as "Books Details (Readings)". Index will be kept false and there will be no change to headers as we will be using keys in books_dictionary as headers.
+
 
 ```
 df = pd.DataFrame.from_dict(books_dictionary)
