@@ -1,4 +1,4 @@
-# New Arrivals (in each category) Information in a Bookstore Using Webscraping
+# New Arrivals (each category) Information in a Bookstore Using Webscraping
 
 In my pilot project, I have used webscraping methods in Python to scrape data off a local bookstore's website (https://www.readings.com.pk/). The data that is scraped is basically the details of few books newly arrived in each category at the bookstore. The final data is stored in a CSV file and around 600+ books details are stored in it. It looks something like this:
 
@@ -118,4 +118,15 @@ The categories list would look like this:
 
 ['Adult Colouring Books', 'Adult Graphic Novels', 'Anthropology', 'Archaeology', 'Architecture', 'Art', 'Automobiles', 'Aviation', 'Biography & Autobiography', 'Body, Mind & Spirit', 'Business', 'Coffee Table', 'Computer', 'Cooking', 'Crafts', 'Education', 'Fashion', 'Fiction', 'Games & Puzzles', 'Gardening & Landscaping', 'Gift Books', 'Guns', 'Health', 'Health & Fitness', 'History', 'Home & Interior', 'Humor', 'Jewelry', 'Journals & Diaries', 'Language', 'Law', 'Linguistics', 'Literary Criticism', 'Literature', 'Mass Communication', 'Medical', 'Middle Eastern Studies', 'Mythology & Folklore', 'Nature', 'New Age/Occult', 'Pakistan Studies', 'Performing Arts', 'Pets', 'Philosophy', 'Photography', 'Politics', 'Psychology', 'Reference', 'Religion', 'Research', 'Science', 'Selfhelp', 'Sociology', 'South Asian Studies', 'Sports', 'Study Guides', 'Travel Guides', 'Travel Writings', 'True Crime', 'Women Studies', 'Writing Skills']
 
+```
+
+A new dictionary is created which will be our final dictionary converted into a CSV file
+
+```
+books_dictionary = {"Title": [],
+                    "Category": [],
+                    "Price": [],
+                    "Availability": [],
+                    "Links": [],
+                    }
 ```
