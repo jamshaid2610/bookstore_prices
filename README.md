@@ -231,6 +231,13 @@ df.to_csv("Book Details (Readings).csv", index=False)
 
 ```
 
+And as shown above, the final file will look something like this:
+
+
+![Final Screenshot](/csv_screenshot.png)
+
+
+
 # Feedback
 
 Given that this is my first personal project, please do send me a feedback at jamshaid2610@gmail.com :smile:
