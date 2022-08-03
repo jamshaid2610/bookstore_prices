@@ -236,7 +236,17 @@ And as shown above, the final file will look something like this:
 
 ![Final Screenshot](/csv_screenshot.png)
 
+You can use the file to filter your favourite category:
 
+![Category Filter](/category_filter.png)
+
+or the price range you are looking for:
+
+![Price Filter](/price_filter.png)
+
+or if the books that are available:
+
+![Availability Filter](/availability_filter.png)
 
 # Feedback
 
