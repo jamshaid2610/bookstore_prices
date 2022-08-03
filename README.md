@@ -130,3 +130,40 @@ books_dictionary = {"Title": [],
                     "Links": [],
                     }
 ```
+
+Printing variable to check at the end of the next for loop that the codes are being executed and all the categories and their books have been inserted in the dictionary. 
+Then a for loop is executed which takes the url of a category, uses request module to get the concerned html format to be used for BeautifulSoup
+
+```
+printing = 0
+for category in categories_with_link:
+
+    category_url = categories_with_link[category]
+    category_website = requests.get(category_url)
+    category_html = category_website.text
+
+    category_soup = BeautifulSoup(category_html, 'html.parser')
+    
+```
+Two tags are being targeted on the category website. Both of them are "div" tags. The "title_div_tag" is for targeting the title of the book and the link as well.
+"avail_tag" is used to target other details of the book, later from this tag we will extract the "Availability" and "Price" information of the book.
+
+```
+    title_div_tag = category_soup.find_all(name="div", class_="product_detail_page_left_colum_author_name")
+    avail_tag = category_soup.find_all(name="div", class_="new_change_title_plus_cart_button_bottom_area_left")
+    
+```
+
+A for loop is executed on the "title_div_tag", after which we will target the anchor tag which contains the title of the book. Using getText() we will extract the title name from the anchor tag. The title name extracted were all in lowercase, hence the use of title(). Then the title name is appended to they key "Title" in books_dictionary. We will take this opportunity to add the associated category in books_dictionary using "books_dictionary["Category"].append(category)" The final thing in this for loop is to take out the link associated with the book. To do that we used "anchor_tag['href']" and to complete the link we added 'f"{READINGS_URL}{link}"' as the variable link only gave partial link. Then we appended the links to the key "Links" in books_dictionary. The for loop lasted till all the books and its information listed on the page were appended in the books_dictionary.
+
+```
+    for title in title_div_tag:
+        anchor_tag = title.find_next(name="a")
+        title_name = anchor_tag.getText().title()
+        books_dictionary["Title"].append(title_name)
+        books_dictionary["Category"].append(category)
+
+        link = anchor_tag['href']
+        complete_link = f"{READINGS_URL}{link}"
+        books_dictionary["Links"].append(complete_link)
+```
