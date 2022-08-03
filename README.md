@@ -149,21 +149,49 @@ Two tags are being targeted on the category website. Both of them are "div" tags
 "avail_tag" is used to target other details of the book, later from this tag we will extract the "Availability" and "Price" information of the book.
 
 ```
-    title_div_tag = category_soup.find_all(name="div", class_="product_detail_page_left_colum_author_name")
-    avail_tag = category_soup.find_all(name="div", class_="new_change_title_plus_cart_button_bottom_area_left")
+title_div_tag = category_soup.find_all(name="div", class_="product_detail_page_left_colum_author_name")
+avail_tag = category_soup.find_all(name="div", class_="new_change_title_plus_cart_button_bottom_area_left")
     
 ```
 
 A for loop is executed on the "title_div_tag", after which we will target the anchor tag which contains the title of the book. Using getText() we will extract the title name from the anchor tag. The title name extracted were all in lowercase, hence the use of title(). Then the title name is appended to they key "Title" in books_dictionary. We will take this opportunity to add the associated category in books_dictionary using "books_dictionary["Category"].append(category)" The final thing in this for loop is to take out the link associated with the book. To do that we used "anchor_tag['href']" and to complete the link we added 'f"{READINGS_URL}{link}"' as the variable link only gave partial link. Then we appended the links to the key "Links" in books_dictionary. The for loop lasted till all the books and its information listed on the page were appended in the books_dictionary.
 
 ```
-    for title in title_div_tag:
-        anchor_tag = title.find_next(name="a")
-        title_name = anchor_tag.getText().title()
-        books_dictionary["Title"].append(title_name)
-        books_dictionary["Category"].append(category)
 
-        link = anchor_tag['href']
-        complete_link = f"{READINGS_URL}{link}"
-        books_dictionary["Links"].append(complete_link)
+for title in title_div_tag:
+    anchor_tag = title.find_next(name="a")
+    title_name = anchor_tag.getText().title()
+    books_dictionary["Title"].append(title_name)
+    books_dictionary["Category"].append(category)
+
+    link = anchor_tag['href']
+    complete_link = f"{READINGS_URL}{link}"
+    books_dictionary["Links"].append(complete_link)
+    
 ```
+
+Then a for loop is executed on the "avail_tag". The next "div" tag in "avail_tag" gives the user the status of book's availability, which would be extracted using getText() and then appended in the books_dictionary for the "Availability" key.
+To find the price, 'price = a.find_next(name="div", class_="our_price")' is executed. This tag has several prices listed in it hence after getTexT(), we split these items in a list and the last element in the list is the actual price that the bookstore is selling for. Then we append it in books_dictionary for the "Price" key.
+
+```
+for a in avail_tag:
+    avail = a.find_next(name="div")
+    status = avail.getText()
+    books_dictionary["Availability"].append(status)
+
+    price = a.find_next(name="div", class_="our_price")
+    actual_price = price.getText().split()[-1]
+    books_dictionary["Price"].append(actual_price)
+```
+
+After the main for loop has been executed, we will have a complete dictionary of all the categories and its first few newest arrivals. Then using pandas module, we will convert the dictionary into a dataframe and then the dataframe will be converted into a CSV file known as "Books Details (Readings)". Index will be kept false and there will be no change to headers as we will be using keys in books_dictionary as headers.
+
+```
+df = pd.DataFrame.from_dict(books_dictionary)
+df.to_csv("Book Details (Readings).csv", index=False)
+
+```
+
+# Feedback
+
+Given that this is my first personal project, please do send me a feedback at jamshaid2610@gmail.com :smile:
