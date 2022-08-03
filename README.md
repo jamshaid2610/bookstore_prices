@@ -248,6 +248,10 @@ or if the books that are available:
 
 ![Availability Filter](/availability_filter.png)
 
+# End Result
+
+This particular project gave us information for about more than 600 books in matter of minutes. 
+
 # Feedback
 
 Given that this is my first personal project, please do send me a feedback at jamshaid2610@gmail.com :smile:
