@@ -13,7 +13,7 @@ I will be soon uploading a video on youtube
 
 
 # Install
-For this webscrapiing project, I have used three packages. 
+For this webscraping project, I have used three packages. 
 
 I have used "bs4" to use the BeautifulSoup class which basically is the main tool to scrap data from the website.
 
